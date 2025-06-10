@@ -46,7 +46,7 @@ include_once 'templates/header.php';
 <script>
     var postData = {
             start : 0,
-            length : 10,
+            length : 5,
             draw: 0
         };
     $(document).ready(function(){
