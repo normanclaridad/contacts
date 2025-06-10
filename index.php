@@ -52,24 +52,17 @@ include_once 'templates/header.php';
     $(document).ready(function(){
         getData();
         $('#search').keyup(function(){
-            var val = $(this).val();  
-            // search[value];
+            var val = $(this).val();
             postData.search = {
-                value: val           
+                value: val
             }
-            
+
             getData();
         })
     })
 
-    function getData(data = []) {
-        
-        if(data.legth > 0) {
-            
-        }
-
+    function getData() {        
         console.log(postData);
-
         $.ajax({
             url : 'api/get.php',
             type : 'post',

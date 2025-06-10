@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require ('../models/Contacts.php'); 
 require ('../inc/app_settings.php');
 require ('../inc/Helpers.php');
@@ -25,8 +25,8 @@ $urlFormer = '';
 
 $columns = ['name', 'company', 'phone', 'email'];
 
-$whereCondition = $sqlTot = $sqlRec = '';
-
+$sqlTot = $sqlRec = '';
+$whereCondition = " AND created_by = " . $_SESSION['SESS_ID'];
 if( !empty($params['search']['value']) ) {
     $whereCondition .= " AND ";
     $whereCondition .= " ( name LIKE '%". $params['search']['value'] ."%'";
